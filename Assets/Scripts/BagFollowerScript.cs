@@ -16,7 +16,7 @@ public class BagFollowerScript : MonoBehaviour {
 	
 	void Update ()
     {
-        transform.localPosition = new Vector3(VRCamera.transform.position.x, 1.37f, VRCamera.transform.position.z);
+        transform.localPosition = new Vector3(VRCamera.transform.position.x, 0.75f, VRCamera.transform.position.z);
 
     }
 }

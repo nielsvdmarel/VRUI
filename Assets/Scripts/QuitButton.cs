@@ -7,8 +7,8 @@ public class QuitButton : MonoBehaviour {
     private bool quitButton;
     [SerializeField]
     private GameObject QuitMenu;
-	
-	void Start ()
+    private bool RightControllerButton;
+    void Start ()
     {
 		
 	}
@@ -16,12 +16,12 @@ public class QuitButton : MonoBehaviour {
 	
 	void Update ()
     {
-		
-	}
+        RightControllerButton = GameObject.Find("Controller (right)").GetComponent<ViveInput>().RightTriggerPressed;
+    }
 
     void OnTriggerStay(Collider other)
     {
-        if (Input.GetButton("Fire1"))
+        if (RightControllerButton)
         {
             if (quitButton)
             {
