@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public class ItemHolder : MonoBehaviour {
     public GameObject CurrentItem;
     public int AmountOfItems;
-    [SerializeField]
-    private Image ItemImage;
-    [SerializeField]
-    private Text ItemName;
-    
+    public Sprite ItemImage;
+    public Text ItemName;
+    public GameObject ChildImage;
 	void Start ()
     {
 		
@@ -22,8 +20,9 @@ public class ItemHolder : MonoBehaviour {
 		
 	}
 
-    void Additem()
+   public void UpdateImageAndText()
     {
-
+        this.gameObject.GetComponentsInChildren<Image>()[1].sprite = ItemImage;
+        ItemName.text = CurrentItem.name + " X " + AmountOfItems;
     }
 }

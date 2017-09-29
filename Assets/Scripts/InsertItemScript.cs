@@ -12,6 +12,8 @@ public class InsertItemScript : MonoBehaviour {
     private float Timer;
     [SerializeField]
     private GameObject CurrentInsertingItem;
+    [SerializeField]
+    private ItemPusher itemPusher;
     private GameObject Itemlist;
 	void Start ()
     {
@@ -29,6 +31,7 @@ public class InsertItemScript : MonoBehaviour {
         if(other.tag == "Item")
         {
             ItemIsInserting = true;
+            itemPusher.CurrentGivenItem = other.gameObject;
             StartCoroutine(StartTimer());
             CurrentInsertingItem = other.gameObject;
         }
